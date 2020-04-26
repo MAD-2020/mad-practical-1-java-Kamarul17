@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class Question5
 {
   public static void main(String[] args)
@@ -26,7 +26,39 @@ public class Question5
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
      
-    Scanner in = new Scanner(System.in);
-    
+     
+     Scanner in = new Scanner(System.in);
+     int input;
+     ArrayList<Integer> allInt = new ArrayList<Integer>();
+
+     System.out.print("Enter numbers: ");
+     int num = in.nextInt();
+
+     for (int i=0;i<num;i++)
+     {
+         input = in.nextInt();
+         allInt.add(input);
+     }
+
+     int count = 0;
+     int mostCount = 0;
+     int mode = 0;
+     for (int j=0;j<allInt.size();j++)
+     {
+         for (int k=0;k<allInt.size();k++)
+         {
+             if (allInt.get(j) == allInt.get(k))
+             {
+                 count++;
+             }
+         }
+         if(counter > imostCount)
+         {
+             mode = allInt.get(j);
+             mostCount = counter;
+         }
+         count = 0;
+     }
+     System.out.println("The mode is: " + mode);
   }
 }
